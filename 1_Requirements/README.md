@@ -28,7 +28,7 @@ A CLI Interface based light weight solution.
 ## SWOT ANALYSIS
 ![SWOT-Analysis](https://github.com/amrathesh/STEPin_Mini_Project/blob/8efcc4251d099eedb88151e05f51bbbdd1048dd9/6_ImagesAndVideos/swot_analysis.png)
 
-# Detail requirements
+# Detailed requirements
 ## High Level Requirements:
 
 |      ID          |Description                          |Status                         |
