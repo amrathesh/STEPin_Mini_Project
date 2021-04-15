@@ -35,12 +35,12 @@ A CLI Interface based light weight solution.
 |----------------|-------------------------------|-----------------------------|
 |HR_01|windows /Linux operating system        |Implemented            |
 |HR_02|Gcc compiler with Makefile for Multifile programming|Progress|
-|HR_03|Application that runs on both Windows and Linux operating system|Progress|
-|HR_04|Application that allows user to make a choice of operation to be performed |Progress|
+|HR_03|Application that runs on both Windows and Linux|Progress|
+|HR_04|Application that allows user to make a choice.|Progress|
 |HR_05|Store and retrieve data|Implemented|
 
 ## Low Level Requirements
 
 |      ID          |Description                          |Status                         |
 |----------------|-------------------------------|-----------------------------|
-|LR_01|The application must be able to execute irrespective of OS,provided with GCC compiler,makefile and Static and Dynamic code analysis       |Progress            |
+|LR_01|The application must be able to execute irrespective of OS      |Progress            |
