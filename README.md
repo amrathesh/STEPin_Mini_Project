@@ -1,4 +1,4 @@
-#Inventory Management System 
+# Inventory Management System 
 
 A solution to keep track of workshop inventory by providing simple solution to add components, display, lookup whether a component is available or not. This tool will be helpful for inventory manager.
 
