@@ -17,7 +17,7 @@ A CLI Interface based light weight solution.
 
 ## Defining Our System
 ### Architecture
-![Architecture](https://github.com/Dhanushu1999/STEPin_Mini_Project/blob/master/1_Requirements/Architecture.png)
+![Architecture]()
 
 - Inventory Management System aims on providing user with options: . 
     - Add a item to inventory
