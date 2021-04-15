@@ -1,4 +1,4 @@
-#Inventory Management System 
+# Inventory Management System 
 
 A solution to keep track of workshop inventory by providing simple solution to add components, display, lookup whether a component is available or not. This tool will be helpful for inventory manager.
 
@@ -23,7 +23,7 @@ Folder                   | Description
 
 PS No. |  Name               |    Features    | Issuess Raised |Issues Resolved|No Test Cases|Test Case Pass
 -------|---------------------|----------------|----------------|---------------|-------------|--------------
-257170 | Himanshu S Kaushish   | Entire Project (Requirements, Design, Implementation and TestPlanAndOutput)  | NA        |Na  |2 Overall Test cases  | All Passed   
+259032 | Amrathesh| Entire Project (Requirements, Design, Implementation and TestPlanAndOutput)  | NA        |NA  |NA  | NA   
 
 ## Integrated Tools to GitHub
 *  [Codacy](https://www.codacy.com/)
