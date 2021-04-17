@@ -90,5 +90,7 @@ int main()
 
 
     }
+	free(itm);
+	return 0;
 
 }
