@@ -23,7 +23,7 @@ Folder                   | Description
 
 PS No. |  Name               |    Features    | Issuess Raised |Issues Resolved|No Test Cases|Test Case Pass
 -------|---------------------|----------------|----------------|---------------|-------------|--------------
-259032 | Amrathesh| Entire Project (Requirements, Design, Implementation and TestPlanAndOutput)  | NA        |NA  |NA  | NA   
+259032 | Amrathesh| Entire Project (Requirements, Design, Implementation and TestPlanAndOutput)  | NA        |NA  |4  | NA   
 
 ## Integrated Tools to GitHub
 *  [Codacy](https://www.codacy.com/)
