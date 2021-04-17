@@ -1,112 +1,94 @@
-#include <calculator_operations.h>
+#include <inventory_manager.h>
 
-/* Status of the operation requested */
-#define VALID   (1)
-#define INVALID (0)
-
-/* Calculator operation requested by user*/
-unsigned int calculator_operation = 0;
-
-/* Operands on which calculation is performed */
-int calculator_operand1 = 0;
-int calculator_operand2 = 0;
-
-/* Valid operations */
-enum operations{ ADD=1, SUBTRACT, MULTIPLY, DIVIDE, EXIT };
-
-/* Display the menu of operations supported */
-void calculator_menu(void);
-/* Verifies the requested operations validity */
-int valid_operation(int operation);
-
-
-/* Start of the application */
-int main(int argc, char *argv[])
+int main()
 {
-    printf("\n****Calculator****\n");
-    while(1)
-    {
-        calculator_menu();
-    }
-}
+    int choice = 0 ;
+    FILE *fp;
+    struct item *itm = (struct item *)calloc(1, sizeof(struct item));
 
-void calculator_menu(void)
-{
-    printf("\nAvailable Operations\n");
-    printf("\n1. Add\n2. Subtract\n3. Multiply\n4. Divide\n5. Exit");
-    printf("\n\tEnter your choice\n");
-   
-     __fpurge(stdin);
-    scanf("%d", &calculator_operation);
+    system("cls");
+    printf("/***************INVENTORY MANAGER***************/");
+    printf("\nAuthor : Amrathesh             Guided by : LTTS\n\n\n");
+    
+    while(choice != 5)
+    {
+        printf("\n 1. ADD ITEM\n");
+	    printf("\n 2. MODIFY ITEM\n");
+	    printf("\n 3. SEARCH ITEM\n");
+	    printf("\n 4. DELETE ITEM\n");
+	    printf("\n 5. EXIT\n");
 
-    if(EXIT == calculator_operation)
-    {
-        printf("\nThank you. Exiting the Application\n");
-        exit(0);
+        scanf("%d",&choice);
+
+        switch(choice)
+        {
+            case 1:
+                printf("\nEnter the item name : ");
+                scanf("%s",&itm->name);
+                printf("\nEnter the manufacturer name : ");
+                scanf("%s",&itm->manufacturer);
+                printf("\nEnter the unit cost of the item : ");
+                scanf("%d",&itm->unit_cost);
+                printf("\nEnter no of units added to inventory : ");
+                scanf("%d",itm->no_avail);
+
+                fp = fopen(itm->name,"r");
+                if(fp == NULL)
+                   fp = fopen(itm->name,"w");
+                else
+                   printf("\n[INFO] Item already exists in inventory please consider modifiying it");
+                additem(fp,itm);
+                fclose(fp);
+                break;
+
+            case 2:
+                printf("\nEnter item name that to be modified : ");
+                scanf("%s",&itm->name);
+                fp = fopen(itm->name,"r");
+                if(fp == NULL)
+                   printf("\n[INFO] Item doesn't exists in inventory.");
+                else
+                   fclose(fp);
+                   fopen(itm->name, "rw");
+                   modifyitem(fp);
+                fclose(fp);
+                break;
+
+            case 3: 
+                printf("\nEnter item name to be searched : ");
+                scanf("%s",&itm->name);
+                fp = fopen(itm->name,"r");
+                if(fp == NULL)
+                   printf("\n Item not found in inventory");
+                else
+                   printf("\n[INFO] Item found :: Details :: \n");
+                   displayitem(fp);
+                fclose(fp);
+                break;
+
+            case 4:
+                fp = fopen(itm->name,"r");
+                if(fp == NULL)
+                   printf("\n Item not found in inventory");
+                else
+                   deleteitem(fp);
+                fclose(fp);
+                break;
+
+            case 5:
+                exit(0); 
+                break;
+
+            default:
+                printf("\nPlease enter a valid choice!\n");
+
+
+            
+        }
+ 
+    
+
+
     }
 
-    if(INVALID != valid_operation(calculator_operation))
-    {
-        printf("\n\tEnter your Numbers with space between them\n");
-        __fpurge(stdin);
-        scanf("%d %d", &calculator_operand1, &calculator_operand2);
-    }
-    else
-    {
-        printf("\n\t---Wrong choice---\nEnter to continue\n");
-        __fpurge(stdin);
-        getchar();
-        return;
-        
-    }
-    switch(calculator_operation)
-    {
-        case ADD:
-            printf("\n\t%d + %d = %d\nEnter to continue", 
-            calculator_operand1, 
-            calculator_operand2,
-            add(calculator_operand1, calculator_operand2));
-            
-            __fpurge(stdin);
-            getchar();
-            break;
-        case SUBTRACT:
-            printf("\n\t%d - %d = %d\nEnter to continue", 
-            calculator_operand1, 
-            calculator_operand2,
-            subtract(calculator_operand1, calculator_operand2));
-            
-            __fpurge(stdin);
-            getchar();
-            break;
-        case MULTIPLY:
-            printf("\n\t%d * %d = %d\nEnter to continue", 
-            calculator_operand1, 
-            calculator_operand2,
-            multiply(calculator_operand1, calculator_operand2));
-            
-            __fpurge(stdin);
-            getchar();
-            break;
-        case DIVIDE:
-            printf("\n\t%d / %d = %d\nEnter to continue", 
-            calculator_operand1, 
-            calculator_operand2,
-            divide(calculator_operand1, calculator_operand2));
-            
-            __fpurge(stdin);
-            getchar();
-            break;
-        case 5:
-            exit(0);
-            break;
-        default:
-            printf("\n\t---It should never come here---\n");
-    }
-}
-
-int valid_operation(int operation)
-{
-    /* Check if the operation is a valid operation */
-    return ((ADD <= operation) && (EXIT >= operation)) ? VALID: INVALID;
 }
